@@ -1,0 +1,37 @@
+# ============================================================
+# .gitignore — NYC SBA 504 Lending Analysis
+# ============================================================
+
+# ---- Raw data (large, public, do not redistribute) ----
+# The big SBA and census source files must never be committed.
+data/raw/
+*.csv
+
+# Exception: allow the small query-output CSVs that feed Tableau.
+# (Remove these lines if you'd rather keep ALL csv files out.)
+!data/outputs/
+!data/outputs/*.csv
+
+# ---- Credentials / secrets ----
+# Never commit connection strings, passwords, or env files.
+*.env
+.env
+secrets.*
+*credentials*
+
+# ---- OS / editor cruft ----
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# ---- Tableau working files ----
+# Keep published dashboards on Tableau Public; skip local extracts/backups.
+*.twbr
+*.hyper
+.tab_staging/
+
+# ---- Misc ----
+*.log
+*.tmp
